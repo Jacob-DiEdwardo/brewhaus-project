@@ -15,14 +15,16 @@
 - [x] Call API and display beers
 - [x] Lazy-load additional beers
 - [x] Add beers per page functionality (dropdown)
-Commit
+- (commit)
 - [x] Add header
 - [x] Add footer
 - [x] Implement react-router-dom
-- [ ] Create beer details page
-- [ ] Link to beer details page
-- [ ] Add back link to beer details page
-- [ ] Add logo/favicon
+- (commit)
+- [x] Link to beer details page
+- [x] Create beer details page
+- [x] Add back link to beer details page
+- [x] Add logo/favicon
+- (commit)
 - [ ] Implement search functionality
 - [ ] Random beer (bonus)
 - [ ] Add styling (bonus)

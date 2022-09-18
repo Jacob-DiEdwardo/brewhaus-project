@@ -14,10 +14,11 @@ const StyledFooter = styled.footer`
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
 `
 
 const StyledP = styled.p`
     color: ${ props => props.theme.palette.secondary.main };
+    font-size: 14px;
     margin: 0;
 `

@@ -27,7 +27,7 @@ const getBeers = async (options?: GetBeersOptions) => {
     } catch (e) {
         console.log(e)
         return {
-            data: []
+            data: [{}]
         }
     }
 }

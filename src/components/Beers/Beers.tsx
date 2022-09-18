@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid, Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core'
+import { Grid, Button, Select, MenuItem, FormControl } from '@material-ui/core'
 import { BeersProps } from './types'
 import LoadingSpinner from '../LoadingSpinner'
 import Beer from './components/Beer'
@@ -18,7 +18,7 @@ const Beers: React.FunctionComponent<BeersProps> = ({
     <Container>
         <Grid className={ classes.beersGrid }>
             <ItemsPerPageContainer>
-                <StyledLabel id="select-beers-per-page-label">Select Number of Beers per Page:</StyledLabel>
+                <StyledLabel id="select-beers-per-page-label">Beers per Page:</StyledLabel>
                 <FormControl>
                     <Select labelId="select-beers-per-page-label"
                             id="select-beers-per-page"

@@ -1,5 +1,8 @@
 const sendErrorResponse = require('./error/sendErrorResponse')
-const punkApi = require('./punk/punkApi')
+const { 
+    punkApiGetBeers,
+    punkApiGetBeerById
+} = require('./punk/punkApi')
 
 const configureRoutes = (app) => {
     app.get('/', (req, res) => {
@@ -8,11 +11,21 @@ const configureRoutes = (app) => {
 
     app.post('/getBeers', async (req, res) => {
         try {
-            const result = await punkApi(req.body)
+            const result = await punkApiGetBeers(req.body)
             res.send(result.data)
         } catch (e) {
             console.log('getBeers error:', e)
-            sendErrorResponse(req, res, 'An error occurred!', e)
+            sendErrorResponse(req, res, 'getBeers error occurred!', e)
+        }
+    })
+
+    app.post('/getBeerById', async (req, res) => {
+        try {
+            const result = await punkApiGetBeerById(req.body.id)
+            res.send(result.data)
+        } catch (e) {
+            console.log('getBeers error:', e)
+            sendErrorResponse(req, res, 'getBeerById error occurred!', e)
         }
     })
 

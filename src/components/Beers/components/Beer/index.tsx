@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { BeerProps } from '../../types'
 
@@ -6,14 +7,17 @@ const Beer: React.FunctionComponent<BeerProps> = ({
     image_url,
     name,
     tagline,
-    description
+    description,
+    id
 }: BeerProps) => (
     <Tile>
         <div>
             <StyledImg src={image_url} alt={name} />
         </div>
         <RightSide>
-            <StyledH2>{name}</StyledH2>
+            <StyledLink to={ `/beer-details/${id}` }>
+                <StyledH2>{name}</StyledH2>
+            </StyledLink>
             <p>{tagline}</p>
             <p>{description}</p>
         </RightSide>
@@ -43,4 +47,8 @@ const StyledH2 = styled.h2`
     font-size: 26px;
     text-decoration: underline;
     margin-top: 0;
+`
+
+const StyledLink = styled(Link)`
+    color: black;
 `
