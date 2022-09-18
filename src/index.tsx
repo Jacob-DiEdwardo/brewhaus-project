@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import Page from './components/Page'
 import reportWebVitals from './reportWebVitals'
@@ -7,7 +8,9 @@ import Theme from './components/Theme'
 
 const App: React.FunctionComponent = () => (
   <Theme>
-    <Page />
+    <BrowserRouter>
+      <Page />
+    </BrowserRouter>
   </Theme>
 )
 

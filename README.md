@@ -11,14 +11,20 @@
 1. 
 
 ### TASKS
-[x] Call API and display beers
-[x] Lazy-load additional beers
-[x] Add beers per page functionality (dropdown)
-[] Implement react-router-dom
-[] Create beer detail pages
-[] Add header/logo/favicon
-[] Implement search functionality (bonus)
-[] Random beer (bonus)
-[] Add styling (bonus)
-[] Unit testing (bonus)
-[] Improve types (bonus)
+- [x] Convert boilerplate to TypeScript
+- [x] Call API and display beers
+- [x] Lazy-load additional beers
+- [x] Add beers per page functionality (dropdown)
+Commit
+- [x] Add header
+- [x] Add footer
+- [x] Implement react-router-dom
+- [ ] Create beer details page
+- [ ] Link to beer details page
+- [ ] Add back link to beer details page
+- [ ] Add logo/favicon
+- [ ] Implement search functionality
+- [ ] Random beer (bonus)
+- [ ] Add styling (bonus)
+- [ ] Unit testing (bonus)
+- [ ] Improve types (bonus)
