@@ -42,7 +42,7 @@ const RightSide = styled.div`
 `
 
 const StyledH2 = styled.h2`
-    color: ${ props => props.theme.palette.alternative.main }
+    color: ${ props => props.theme.palette.alternative.main };
     font-weight: bold;
     font-size: 26px;
     text-decoration: underline;

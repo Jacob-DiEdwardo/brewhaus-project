@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from 'react'
+import { ChangeEvent, ReactNode, ChangeEventHandler } from 'react'
 
 interface ValueUnit {
     value: number
@@ -73,11 +73,20 @@ export interface BeersProps {
     setItemsPerPage: (val: number) => void
     showLoadMoreButton: boolean
     setShowLoadMoreButton: (val: boolean) => void
-    loadMoreBeers: () => void
     itemsPerPageOptions: number[]
-    updateItemsPerPage: (event: ChangeEvent<{ name?: string | undefined; value: unknown; }>, child: ReactNode) => void,
+    updateItemsPerPage: (event: ChangeEvent<{ name?: string | undefined; value: unknown; }>, child: ReactNode) => void
     classes: {
         beersGrid: string
-        selectBeersPerPage: string
+        beersSearchSelect: string,
+        SearchFormControl: string
     }
+    searchTypes: {
+        [key: string]: string
+    }
+    searchType: string
+    updateSearchType: (event: ChangeEvent<{ name?: string | undefined; value: unknown; }>, child: ReactNode) => void
+    searchTerm: string
+    updateSearchTerm: ChangeEventHandler<HTMLInputElement>
+    searchBeers: () => void
+    loadMoreBeers: () => void
 }

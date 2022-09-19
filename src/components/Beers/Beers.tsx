@@ -13,30 +13,57 @@ const Beers: React.FunctionComponent<BeersProps> = ({
     loadMoreBeers,
     itemsPerPageOptions,
     updateItemsPerPage,
-    classes
+    classes,
+    searchTypes,
+    searchType,
+    updateSearchType,
+    searchTerm,
+    updateSearchTerm,
+    searchBeers,
 }: BeersProps) => (
     <Container>
         <Grid className={ classes.beersGrid }>
+            <BeerSearchContainer>
+                <FormControl className={ classes.SearchFormControl }>
+                    <Select id="select-search-type"
+                            className={ classes.beersSearchSelect }
+                            value={ searchType }
+                            onChange={ updateSearchType }
+                            label="Search Type">
+                        { Object.keys(searchTypes).map((key) => (
+                            <MenuItem key={ key } value={ key }>
+                                { searchTypes[key] }
+                            </MenuItem>
+                        )) }
+                    </Select>
+                    { searchType !== 'default' &&
+                        <StyledInput type="text"
+                                     value={ searchTerm }
+                                     onChange={ updateSearchTerm } />
+                    }
+                    <Button color="secondary" onClick={ searchBeers }>Search</Button>
+                </FormControl>
+            </BeerSearchContainer>
             <ItemsPerPageContainer>
                 <StyledLabel id="select-beers-per-page-label">Beers per Page:</StyledLabel>
                 <FormControl>
                     <Select labelId="select-beers-per-page-label"
                             id="select-beers-per-page"
-                            className={ classes.selectBeersPerPage }
+                            className={ classes.beersSearchSelect }
                             value={ itemsPerPage }
                             onChange={ updateItemsPerPage }
                             label="Beers Per Page">
-                        {itemsPerPageOptions.map((value: number, index: number) => (
+                        { itemsPerPageOptions.map((value: number, index: number) => (
                             <MenuItem key={ index } value={ value }>
                                 { value }
                             </MenuItem>
-                        ))}
+                        )) }
                     </Select>
                 </FormControl>
             </ItemsPerPageContainer>
-            {beers.map((beer) => (
+            { beers.length ? beers.map((beer) => (
                 <Beer key={ beer.id } { ...beer } />
-            ))}
+            )) : !isLoading ? <NoBeersFound>No Beers Found!</NoBeersFound> : null }
             {isLoading && <LoadingSpinner />}
             {showLoadMoreButton &&
                 <LoadMoreContainer>
@@ -56,6 +83,14 @@ const Container = styled.div`
   display: flex;
 `
 
+const BeerSearchContainer = styled.div`
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+    align-iterms: center;
+`
+
 const ItemsPerPageContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
@@ -71,5 +106,14 @@ const LoadMoreContainer = styled.div`
 
 const StyledLabel = styled.label`
     padding-right: 10px;
-    color: ${ props => props.theme.palette.secondary.main }
+    color: ${ props => props.theme.palette.secondary.main };
+`
+
+const StyledInput = styled.input`
+    margin-left: 20px;
+`
+
+const NoBeersFound = styled.h2`
+    color: ${ props => props.theme.palette.secondary.main };
+    text-align: center;
 `

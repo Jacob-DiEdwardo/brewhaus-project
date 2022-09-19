@@ -7,9 +7,6 @@
 4. From the project root directory, run `npm start` (this runs the front-end app on localhost port 3000)
 5. Open a second terminal, navigate to the server directory, and run `npm run start:dev` (this runs the server on port 8080)
 
-### If I had more time...
-1. 
-
 ### TASKS
 - [x] Convert boilerplate to TypeScript
 - [x] Call API and display beers
@@ -25,8 +22,10 @@
 - [x] Add back link to beer details page
 - [x] Add logo/favicon
 - (commit)
-- [ ] Implement search functionality
-- [ ] Random beer (bonus)
-- [ ] Add styling (bonus)
-- [ ] Unit testing (bonus)
+- [x] Implement search functionality
+- (commit)
+- [ ] Add Random beer UX (bonus)
+- [ ] Improve styling/responsiveness (bonus)
+- [ ] Add Unit testing (bonus)
 - [ ] Improve types (bonus)
+- [ ] Lazy-load images (bonus)

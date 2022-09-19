@@ -11,7 +11,7 @@
         "moduleResolution": "node",
         "esModuleInterop": true,
         "lib": ["es6", "dom"],
-        "noImplicitAny": true,
+        // "noImplicitAny": true,
         "noImplicitThis": true
     },
     "include": ["src/**/*"],

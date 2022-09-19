@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import beerMugImage from '../../assets/beer-mug.png'
 
 const Header: React.FunctionComponent = () => (
     <StyledHeader>
         <div>
-            <StyledImg src={ beerMugImage } alt="Beer Mug Logo" />
+            <Link to="/">
+                <StyledImg src={ beerMugImage } alt="Beer Mug Logo" />
+            </Link>
         </div>
         <StyledH1>Welcome to Brewhaus!</StyledH1>
     </StyledHeader>
